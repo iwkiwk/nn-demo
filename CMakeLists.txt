@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.8)
+
+project(NeuralNetwork)
+
+include_directories(${PROJECT_SOURCE_DIR}/include/)
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG    ${PROJECT_SOURCE_DIR}/bin/)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE  ${PROJECT_SOURCE_DIR}/bin/)
+
+add_executable(NeuralNetwork ${PROJECT_SOURCE_DIR}/src/main.cpp)
+
+if(WIN32)
+set_target_properties(${PROJECT_NAME} PROPERTIES VS_DEBUGGER_WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}/bin")
+set(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} /SAFESEH:NO")
+endif(WIN32)
