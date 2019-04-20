@@ -272,6 +272,9 @@ typedef struct
 
 int main()
 {
+	// Generate train data first
+	generate_train_data();
+
 	vector<unsigned> topology({ 2,2,1 });
 	Net net(topology);
 

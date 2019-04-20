@@ -1,0 +1,6 @@
+Little neural network demo
+
+[REF] https://vimeo.com/19569529
+
+-> cd build
+-> cmake ..
